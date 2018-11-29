@@ -12,7 +12,7 @@ interface HeaderProps {
 export const Header = (props: HeaderProps) => {
     return (
         <section className="contHeader">
-            <Headroom className="headroom">
+            <Headroom className="headroom" style={{position: 'fixed', left: 'inner', right: 'inner', top: 'inner'}}>
                 <nav className="menu">
                     <div className="logo">
                         <Link to='/' className="linklogo">
