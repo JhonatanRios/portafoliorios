@@ -1,0 +1,187 @@
+@import '../../General';
+
+.contHeader {
+    display: flex;
+    justify-content: center;
+}
+
+.headroom {
+    width: 40%;
+    margin: 1em 0 0 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1000;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+
+    img {
+        display: inline-block;
+        height: 10px;
+        ;
+    }
+}
+
+.headroom--unfixed {
+    position: fixed;
+    transform: translateY(0);
+    display: flex;
+    justify-content: center;
+}
+
+.headroom--scrolled {
+    position: fixed;
+    transition: transform 200ms ease-in-out;
+    display: flex;
+    justify-content: center;
+}
+
+.headroom--unpinned {
+    position: fixed;
+    transform: translateY(-125%);
+    display: flex;
+    justify-content: center;
+}
+
+.headroom--pinned {
+    position: fixed;
+    transform: translateY(0%);
+    display: flex;
+    justify-content: center;
+}
+
+.headroom .menu {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 2em;
+}
+
+.headroom .menu .logo {
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+.headroom .menu .logo img {
+    vertical-align: top;
+    height: 40px;
+    margin: 5px 0;
+}
+
+.btn-menu {
+    display: none;
+    color: $secundary;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+.enlaces {
+    display: inline-block;
+    text-align: center;
+    margin-left: 2em;
+    justify-content: space-between;
+}
+
+
+.enlaces a {
+    color: $black;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 200;
+    padding: 1.1em 2em;
+    text-align: center;
+
+}
+
+.enlaces .tienda {
+    padding: 0.7em;
+    width: 4em;
+    height: 2.6em;
+}
+
+.hvr-underline-from-left {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.hvr-underline-from-left:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    background: $primary;
+    height: 4px;
+    -webkit-transition-property: right;
+    transition-property: right;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.hvr-underline-from-left:hover:before,
+.hvr-underline-from-left:focus:before,
+.hvr-underline-from-left:active:before {
+    right: 0;
+}
+
+@-webkit-keyframes hvr-pop {
+    50% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+}
+
+@keyframes hvr-pop {
+    50% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+}
+
+.hvr-pop {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    // box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.hvr-pop:hover,
+.hvr-pop:focus,
+.hvr-pop:active {
+    -webkit-animation-name: hvr-pop;
+    animation-name: hvr-pop;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+
+@media screen and (max-width: $break-small) {
+    width: 100px;
+    float: none;
+}
+
+@media screen and (min-width: $break-large) {
+    float: right;
+}

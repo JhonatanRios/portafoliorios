@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Oxygen:300,400,700');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Oxygen', sans-serif;
+}
+
+//Fuentes
+$fuente: 'Oxygen', sans-serif;
+//Colors
+//Reference Color https://material.io/tools/color/#!/?view.left=0&view.right=0&secondary.color=F44336&primary.color=1E88E5
+$white: #FCFCFC;
+$black: #101012;
+$grey: #3b3d42;
+$greyLight: #979797;
+$primary: #de1404;
+$secundary: #a80101;
+
+//Screens
+$break-small: 320px;
+$break-large: 1200px;

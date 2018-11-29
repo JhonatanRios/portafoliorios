@@ -1,0 +1,82 @@
+@import '../../General';
+
+footer {
+    width: 100%;
+    background: $rose;
+    bottom: 0;
+    height: 50px;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+}
+
+.logoG{
+    height: 100%;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    img{
+        display: inline-block;
+        height: 20px;;
+    }
+}
+
+footer .cont-social {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    a {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0 5%;
+    }
+}
+
+footer .cont-social .social:hover {
+    transform: scale(3);
+    -webkit-transform: scale(3);
+    -moz-transform: scale(3);
+    -o-transform: scale(3);
+}
+
+footer .cont-social .social {
+    color: $white;
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    -moz-transform: scale(2);
+    -o-transform: scale(2);
+    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+}
+
+/*Multicoloured Hover Variations*/
+
+footer .cont-social #social-fb:hover {
+    color: #3B5998;
+}
+
+footer .cont-social #social-tw:hover {
+    color: #4099FF;
+}
+
+footer .cont-social #social-gp:hover {
+    color: #d34836;
+}
+
+footer .cont-social #social-em:hover {
+    color: #f39c12;
+}

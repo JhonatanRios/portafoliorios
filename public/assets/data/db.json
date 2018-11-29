@@ -1,0 +1,52 @@
+{
+    "conductores": [
+        {
+            "nombre": "Jhonatan Stiven Rios Villa",
+            "placa": "DMI-220",
+            "partida": "Icesi",
+            "llegada": "calle 36 # 15 - 40",
+            "puestos": 3,
+            "calificacion": 4,
+            "contacto": 3156366632,
+            "viajes": 4,
+            "hora": "3:00 PM",
+            "mapa": "./assets/img/map.png"
+        },
+        {
+            "nombre": "Jhonatan Stiven Rios Villa",
+            "placa": "DMI-220",
+            "partida": "calle 36 # 15 - 40",
+            "llegada": "Icesi",
+            "puestos": 3,
+            "calificacion": 4,
+            "contacto": 3156366632,
+            "viajes": 4,
+            "hora": "7:00 AM",
+            "mapa": "./assets/img/map.png"
+        },
+        {
+            "nombre": "Daniel Burbano",
+            "placa": "DAY-460",
+            "partida": "Javeriana",
+            "llegada": "calle 36 # 15 - 40",
+            "puestos": 2,
+            "calificacion": 5,
+            "contacto": 3156366632,
+            "viajes": 10,
+            "hora": "3:00 PM",
+            "mapa": "./assets/img/map.png"
+        },
+        {
+            "nombre": "Jhonatan Stiven Rios Villa",
+            "placa": "DMI-220",
+            "partida": "calle 36 # 15 - 40",
+            "llegada": "Javeriana",
+            "puestos": 2,
+            "calificacion": 5,
+            "contacto": 3156366632,
+            "viajes": 10,
+            "hora": "7:00 AM",
+            "mapa": "./assets/img/map.png"
+        }
+    ]
+}
