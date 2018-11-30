@@ -22,42 +22,42 @@ class Store {
     
     @observable proyect = [
         {
-            img: "./assets/img/noche.png",
+            img: "./assets/img/Proyectos/noche.png",
             nombre: "Noche Lunar",
             catego: "Postfotografía",
         },
         {
-            img: "./assets/img/dark.png",
+            img: "./assets/img/Proyectos/dark.png",
             nombre: "Dark angel",
             catego: "Postfotografía",
         },
         {
-            img: "./assets/img/noche.png",
+            img: "./assets/img/Proyectos/noche.png",
             nombre: "Noche Lunar",
             catego: "Postfotografía",
         },
         {
-            img: "./assets/img/dark.png",
+            img: "./assets/img/Proyectos/dark.png",
             nombre: "Dark angel",
             catego: "Postfotografía",
         },
         {
-            img: "./assets/img/noche.png",
+            img: "./assets/img/Proyectos/noche.png",
             nombre: "Noche Lunar",
             catego: "Postfotografía",
         },
         {
-            img: "./assets/img/dark.png",
+            img: "./assets/img/Proyectos/dark.png",
             nombre: "Dark angel",
             catego: "Postfotografía",
         },
         {
-            img: "./assets/img/noche.png",
+            img: "./assets/img/Proyectos/noche.png",
             nombre: "Noche Lunar",
             catego: "Postfotografía",
         },
         {
-            img: "./assets/img/dark.png",
+            img: "./assets/img/Proyectos/dark.png",
             nombre: "Dark angel",
             catego: "Postfotografía",
         },

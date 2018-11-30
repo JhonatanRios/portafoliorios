@@ -13,30 +13,32 @@
     .landing {
         width: 100%;
         height: 60vh;
-        background: gray;
+        background: $greyLight;
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
         justify-content: center;
         align-items: center;
         align-content: center;
-        background: url("/assets/img/fondo.jpg");
-        background-size: cover;
+        position: relative;
 
         .cont-logo {
-            width: 50%;
+            width: 100%;
+            height: 60vh;
             display: flex;
             justify-content: center;
             align-items: center;
             align-content: center;
-
-            img {
-                width: 200px;
-            }
+            background: url("/assets/img/fondo.jpg");
+            background-size: cover;
+            position: absolute;
+            z-index: 0;
         }
 
         .logo {
+            width: 50%;
             filter: blur(0);
+            position: absolute;
         }
     }
 
@@ -71,6 +73,7 @@
                 align-items: center;
                 align-content: center;
                 padding: 3em;
+                position: relative;
 
                 h1 {
                     width: 60%;
@@ -83,6 +86,23 @@
                     width: 60%;
                     font-weight: 400;
                     color: $white;
+                }
+
+                .infoAbout {
+                    margin-top: 1em;
+                    color: $black;
+                    left: 0;
+
+                    .burger-menu {
+                        box-shadow: 0;
+                    }
+
+                    p {
+                        width: 100%;
+                        font-weight: 400;
+                        color: $black;
+                        text-align: center;
+                    }
                 }
             }
 
@@ -105,7 +125,7 @@
 
     .viewProjects {
         width: 100%;
-        padding: 2em 0;
+        padding: 3em 0;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -115,8 +135,7 @@
 
         .cont-projects {
             width: 90%;
-            height: 50vh;
-            // background: #000;
+            height: 40vh;
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
@@ -125,7 +144,7 @@
             align-content: center;
 
             .cont-projectTitle {
-                width: 15%;
+                width: 20%;
                 height: 100%;
                 display: flex;
                 flex-direction: row;
@@ -163,6 +182,7 @@
             .Projects {
                 width: 85%;
                 height: 100%;
+                margin: 0 0 0 1em;
                 overflow: auto;
                 display: flex;
                 flex-direction: row;
@@ -171,28 +191,54 @@
                 align-content: center;
 
                 .otherProject {
-                    width: 30%;
-                    height: 100%;
-                    min-width: 15%;
-                    background: $secundary;
+                    width: 50%;
+                    height: 95%;
+                    min-width: 30%;
+                    background: $white;
                     border-radius: 20px;
-                    padding: 1em;
+                    margin: 0.5em;
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+                    justify-content: center;
+                    align-items: center;
+                    align-content: center;
+                    box-shadow: 0 1px 4px rgba($greyLight, 0.8);
 
-                    img {}
-
-                    h2 {}
-
-                    h3 {}
-
-                    .contentStyle {
-                        background: rgba(255, 255, 255, 0);
-                        width: 80%;
-                        border: none;
+                    img {
+                        width: 100%;
+                        height: 30%;
+                        border-radius: 20px 20px 0 0;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
                     }
 
-                    button {
-                        width: 80%;
-                        height: 25px;
+                    h2 {
+                        height: 5em;
+                        padding: 1.5em;
+                        font-size: 2.5em;
+                        text-align: center;
+                    }
+
+                    h3 {
+                        padding: 1em;
+                    }
+
+                    .moreInfo {
+                        position: absolute;
+                        padding: 1em;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+
+                        p {
+                            width: 100%;
+                            font-weight: 400;
+                            color: $black;
+                            text-align: center;
+                        }
                     }
 
                 }
@@ -203,65 +249,403 @@
 
 .burger-menu,
 .burger-menu.open {
-  background: #fff;
-  padding: 10px;
-  border-radius: 25px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-}
-
-.burger-menu .bar1,
-.bar2,
-.bar3 {
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  margin: 4px 0;
-  transition: 0.4s;
-}
-
-.burger-menu.open .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-4px, 4px);
-  transform: rotate(-45deg) translate(-4px, 4px);
-}
-
-.burger-menu.open .bar2 {
-  opacity: 0;
-}
-
-.burger-menu.open .bar3 {
-  -webkit-transform: rotate(45deg) translate(-6px, -6px);
-  transform: rotate(45deg) translate(-6px, -6px);
+    background: #fff;
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Menu */
 .info {
-  width: 100%;
-  display: block;
-  text-align: center;
-  padding: 0px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 0px;
 }
+
 .info ul {
-  position: relative;
-  top: 0px;
-  font-size: 24px;
-  padding: 0px;
+    position: relative;
+    top: 0px;
+    font-size: 24px;
+    padding: 0px;
 }
+
 .info li {
-  list-style: outside none none;
-  margin: 10px 0px;
-  padding: 0;
-  cursor: pointer;
+    list-style: outside none none;
+    margin: 10px 0px;
+    padding: 0;
+    cursor: pointer;
 }
+
 .info li:hover {
-  color: #ff0000;
+    color: $primary;
 }
 
 
-@media screen and (max-width: $break-small) {
-    width: 100px;
-    float: none;
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+/*@media (min-width: 1281px) {
+
+    //CSS
+
+}*/
+
+/* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+
+@media (min-width: 1025px) and (max-width: 1661px) {
+    .homePadre {
+        .landing {
+            height: 60vh;
+
+            .logo {
+                width: 50%;
+            }
+        }
+
+        .aboutmeHome {
+            flex-direction: column;
+            justify-content: center;
+
+            .cont-description {
+                width: 100%;
+                align-items: center;
+
+                .description {
+                    padding: 1.5em;
+
+                    h1 {
+                        width: 80%;
+                        font-size: 3em;
+                    }
+
+                    p {
+                        width: 80%;
+                        font-weight: 400;
+                        font-size: 1em;
+                    }
+                }
+            }
+        }
+
+        .viewProjects {
+            width: 100%;
+            padding: 3em 0;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+
+            .cont-projects {
+                width: 90%;
+                height: 40vh;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-items: center;
+                align-content: center;
+
+                .cont-projectTitle {
+                    width: 20%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: flex-start;
+                    align-items: flex;
+                    align-content: center;
+
+                    .projectTitle {
+                        width: 100%;
+                        height: 40%;
+                        background: $primary;
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: nowrap;
+                        justify-content: center;
+                        align-items: center;
+                        align-content: flex-end;
+                        border-radius: 20px;
+                        padding: 1em;
+
+                        h1 {
+                            font-weight: 800;
+                            font-size: 3.2em;
+                            line-height: 0.9em;
+                            color: white;
+
+                            span {
+                                color: rgba(#000000, 0);
+                            }
+                        }
+                    }
+                }
+
+                .Projects {
+                    width: 85%;
+                    height: 100%;
+                    margin: 0 0 0 1em;
+                    overflow: auto;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    align-items: center;
+                    align-content: center;
+
+                    .otherProject {
+                        width: 50%;
+                        height: 95%;
+                        min-width: 40%;
+                        background: $white;
+                        border-radius: 20px;
+                        margin: 0.5em;
+                        display: flex;
+                        flex-direction: column;
+                        position: relative;
+                        justify-content: center;
+                        align-items: center;
+                        align-content: center;
+                        box-shadow: 0 1px 4px rgba($greyLight, 0.8);
+
+                        img {
+                            width: 100%;
+                            height: 30%;
+                            border-radius: 20px 20px 0 0;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                        }
+
+                        h2 {
+                            height: 5em;
+                            padding: 1.5em;
+                            font-size: 2.5em;
+                            text-align: center;
+                        }
+
+                        h3 {
+                            padding: 1em;
+                        }
+
+                        .moreInfo {
+                            position: absolute;
+                            padding: 1em;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+
+                            p {
+                                width: 100%;
+                                font-weight: 400;
+                                color: $black;
+                                text-align: center;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
 }
 
-@media screen and (min-width: $break-large) {
-    float: right;
+/* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .homePadre {
+        .landing {
+            height: 40vh;
+
+            .logo {
+                width: 75%;
+            }
+        }
+
+        .aboutmeHome {
+            flex-direction: column;
+            justify-content: center;
+
+            .cont-description {
+                width: 100%;
+                align-items: center;
+
+                .description {
+                    padding: 1.5em;
+
+                    h1 {
+                        width: 80%;
+                        font-size: 3em;
+                    }
+
+                    p {
+                        width: 80%;
+                        font-weight: 400;
+                        font-size: 1em;
+                    }
+                }
+            }
+        }
+
+        .viewProjects {
+            margin: 1.5em 0;
+            padding: 0;
+
+            .cont-projects {
+                height: 60vh;
+                flex-direction: column;
+                justify-content: center;
+
+                .cont-projectTitle {
+                    width: 90%;
+                    height: 10em;
+
+                    .projectTitle {
+                        height: 100%;
+                        padding: 1em;
+
+                        h1 {
+                            font-size: 3em;
+                            line-height: 1em;
+                        }
+                    }
+                }
+
+                .Projects {
+                    margin-top: 1.5em;
+                    height: 90%;
+                    width: 100%;
+
+                    .otherProject {
+                        min-width: 60%;
+                        height: 35em;
+                        margin: 1em;
+
+                        h2 {
+                            font-size: 2em;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
+
+/* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+    //CSS
+
+}
+
+/* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+
+@media (min-width: 320px) and (max-width: 767px) {
+
+    .homePadre {
+
+        .landing {
+            height: 30vh;
+
+            .logo {
+                width: 80%;
+            }
+        }
+
+        .aboutmeHome {
+            flex-direction: column;
+            justify-content: center;
+
+            .cont-description {
+                width: 100%;
+                align-items: center;
+
+                .description {
+                    padding: 1.5em;
+
+                    h1 {
+                        width: 80%;
+                        font-size: 2em;
+                    }
+
+                    p {
+                        width: 80%;
+                        font-weight: 400;
+                        font-size: 0.6em;
+                    }
+                }
+            }
+        }
+
+        .viewProjects {
+            margin: 1.5em 0;
+            padding: 0;
+
+            .cont-projects {
+                height: 60vh;
+                flex-direction: column;
+                justify-content: center;
+
+                .cont-projectTitle {
+                    width: 90%;
+                    height: 10em;
+
+                    .projectTitle {
+                        height: 100%;
+                        padding: 1em;
+
+                        h1 {
+                            font-size: 3em;
+                            line-height: 1em;
+                        }
+                    }
+                }
+
+                .Projects {
+                    margin-top: 1.5em;
+                    height: 60%;
+                    width: 100%;
+
+                    .otherProject {
+                        min-width: 90%;
+                        height: 25em;
+                        margin: 1em;
+
+                        h2 {
+                            font-size: 2em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+
+/*@media (min-width: 320px) and (max-width: 480px) {
+    
+    //CSS
+    
+  }*/

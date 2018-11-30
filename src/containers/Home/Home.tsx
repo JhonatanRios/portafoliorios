@@ -6,6 +6,7 @@ import Popup from "reactjs-popup";
 import "./Home.scss"
 import BurgerIcon from "../../components/BurgerIcon/BurgerIcon.js";
 import Info from "../../components/Info/Info.js";
+import InfoProject from '../../components/Info/InfoProject';
 
 interface Props {
 }
@@ -61,7 +62,7 @@ const contentStyle = {
                         <div className="description">
                             <h1>Acerca de Mi</h1>
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem non unde facilis impedit vitae illo corrupti quam placeat eveniet. Inventore, atque aut. Odit illo recusandae sed rem deserunt? Harum, perferendis!</p>
-                            <div>
+                            <div className="infoAbout">
                                 <Popup
                                     modal
                                     overlayStyle={{ background: "rgba(255,255,255,0.98" }}
@@ -91,14 +92,16 @@ const contentStyle = {
                                         <img src={proy.img} alt="" />
                                         <h2>{proy.nombre}</h2>
                                         <h3>{proy.catego}</h3>
-                                        <Popup
-                                            modal
-                                            overlayStyle={{ background: "rgba(255,255,255,0.98" }}
-                                            contentStyle={contentStyle}
-                                            closeOnDocumentClick={false}
-                                            trigger={open => <BurgerIcon open={open} />}>
-                                            {close => <Info close={close} />}
-                                        </Popup>
+                                        <div className="moreInfo">
+                                            <Popup
+                                                modal
+                                                overlayStyle={{ background: "rgba(255,255,255,0.98" }}
+                                                contentStyle={contentStyle}
+                                                closeOnDocumentClick={false}
+                                                trigger={open => <BurgerIcon open={open} />}>
+                                                {close => <InfoProject close={close} />}
+                                            </Popup>
+                                        </div>
                                     </div>
                                 )
                             })}
