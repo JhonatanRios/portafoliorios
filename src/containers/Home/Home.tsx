@@ -58,30 +58,18 @@ interface State {
                             </div>
                         </div>
                         <div className="Projects">
-                            <div className="otherProject">
-                                <img src="" alt="" />
-                                <h2></h2>
-                                <h3></h3>
-                                <button>
+                            {store.proyect.map((proy: any) => {
+                                return (
+                                    <div className="otherProject">
+                                        <img src={proy.img} alt="" />
+                                        <h2>{proy.nombre}</h2>
+                                        <h3>{proy.catego}</h3>
+                                        <button>
 
-                                </button>
-                            </div>
-                            <div className="otherProject">
-                                <img src="" alt="" />
-                                <h2></h2>
-                                <h3></h3>
-                                <button>
-
-                                </button>
-                            </div>
-                            <div className="otherProject">
-                                <img src="" alt="" />
-                                <h2></h2>
-                                <h3></h3>
-                                <button>
-
-                                </button>
-                            </div>
+                                        </button>
+                                    </div>
+                                )
+                            })}
                         </div>
                     </div>
                 </section>

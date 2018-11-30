@@ -25,6 +25,36 @@ class Store {
             nombre: "Dark angel",
             catego: "Postfotografía",
         },
+        {
+            img: "./assets/img/noche.png",
+            nombre: "Noche Lunar",
+            catego: "Postfotografía",
+        },
+        {
+            img: "./assets/img/dark.png",
+            nombre: "Dark angel",
+            catego: "Postfotografía",
+        },
+        {
+            img: "./assets/img/noche.png",
+            nombre: "Noche Lunar",
+            catego: "Postfotografía",
+        },
+        {
+            img: "./assets/img/dark.png",
+            nombre: "Dark angel",
+            catego: "Postfotografía",
+        },
+        {
+            img: "./assets/img/noche.png",
+            nombre: "Noche Lunar",
+            catego: "Postfotografía",
+        },
+        {
+            img: "./assets/img/dark.png",
+            nombre: "Dark angel",
+            catego: "Postfotografía",
+        },
     ];
 
     @observable men: string = "./assets/img/men.png";
