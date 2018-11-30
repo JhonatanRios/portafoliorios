@@ -3,11 +3,14 @@ import { observer } from 'mobx-react';
 import { store } from '../../stores/store';
 
 import "./Home.scss"
+import {action} from "mobx";
 
 interface Props {
 }
 
 interface State {
+    accelerationIncludingGravityOH: DeviceAcceleration | undefined;
+    imageStyle: any;
 }
 
 @observer export class Home extends React.Component<Props, State> {
@@ -15,28 +18,34 @@ interface State {
     constructor(props: Props) {
         super(props);
         this.state = {
-
-        }
+            accelerationIncludingGravityOH: undefined,
+            imageStyle: undefined
+        };
     }
 
-    render() {
-        if (store.accelerationIncludingGravity) {
+    componentDidMount() {
+        window.addEventListener('devicemotion', this.handleDeviceMotion);
+    }
 
-            this.shadowStyle = {
+    handleDeviceMotion = (event: DeviceMotionEvent) => {
+        const { acceleration, accelerationIncludingGravity, interval, rotationRate } = event;
+        if (accelerationIncludingGravity) {
+            const _imageStyle = {
                 // @ts-ignore
-                transform: `translate3d(${store.accelerationIncludingGravity.x * 8}px, ${store.accelerationIncludingGravity.y * 5 + 30}px, 0) rotateY(${-store.accelerationIncludingGravity.x * 3}deg)`
+                filter: `blur(${Math.abs(accelerationIncludingGravity.x)}px)`
             };
-            const imageStyle = {
-                // @ts-ignore
-                transform: `translate3d(${store.accelerationIncludingGravity.x * 2}px, ${store.accelerationIncludingGravity.y * -2 - 10}px, 0) rotateY(${-store.accelerationIncludingGravity.x * 3}deg)`
-            }
+            this.setState({accelerationIncludingGravityOH: accelerationIncludingGravity, imageStyle: _imageStyle})
         }
+    };
+
+    render() {
+
 
         return (
             <section className="homePadre">
                 <section className="landing">
                     <div className="cont-logo">
-                        <img src={store.logo} alt="" className="logo" style={this.shadowStyle} />
+                        <img src={store.logo} alt="" className="logo"/>
                     </div>
                 </section>
                 <section className="aboutmeHome">
@@ -47,7 +56,7 @@ interface State {
                         </div>
                     </div>
                     <div className="cont-myImage">
-                        <img src={store.men} alt="" className="men" />
+                        <img src={store.men} alt="" className="men" style={this.state.imageStyle}/>
                     </div>
                 </section>
                 <section className="viewProjects">

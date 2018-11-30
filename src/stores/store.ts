@@ -2,17 +2,23 @@ import { observable, computed, action } from "mobx";
 class Store {
     
     constructor () {
-        window.addEventListener('devicemotion', this.handleDeviceMotion, true);
+
     }
 
     @action handleDeviceMotion = (event: DeviceMotionEvent) => {
         const { acceleration, accelerationIncludingGravity, interval, rotationRate } = event;
+        console.log('entro evento');
         if (accelerationIncludingGravity) {
-            this.accelerationIncludingGravity = accelerationIncludingGravity;
+            this.accelerationIncludingGravityOH = accelerationIncludingGravity;
+            this.imageStyle = {
+                // @ts-ignore
+                transform: `translate3d(${accelerationIncludingGravity.x * 2}px, ${accelerationIncludingGravity.y * -2 - 10}px, 0) rotateY(${-accelerationIncludingGravity.x * 3}deg)`
+            }
         }
     };
 
-    @observable accelerationIncludingGravity: DeviceAcceleration | undefined;
+    @observable accelerationIncludingGravityOH: DeviceAcceleration | undefined;
+    @observable imageStyle: any;
     
     @observable proyect = [
         {
